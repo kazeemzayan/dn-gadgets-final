@@ -1,0 +1,51 @@
+---
+import logoDn from "../images/logo.png";
+import List from "./list.astro";
+---
+
+
+
+<header>
+   <div class=logoBox>
+    <label for="logo">
+        <a href="https://www.facebook.com/profile.php?id=100068830778943&mibextid=ZbWKwL">
+        <img src={logoDn.src} alt="logo" height="75px">
+        </a>
+    </label>
+    <a href="https://www.facebook.com/profile.php?id=100068830778943&mibextid=ZbWKwL">DN Gadgets</a>
+   </div>
+   <nav>
+    <ul>
+
+        <List name="Home" url="/"/>
+        <List name="Job Done" url="/more"/>
+        <List name="Contact" url="/contacts"/>
+        <List name="About" url="/about"/>
+
+    </ul>
+   </nav>
+
+   <div class="menu">
+    <svg class="menuBar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18v-2h18v2H3Zm0-5v-2h18v2H3Zm0-5V6h18v2H3Z"/></svg>
+    <svg class="exitMenu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/></svg>
+   </div>
+</header>
+
+
+<script>
+    const menuBar = document.querySelector(".menuBar");
+    const exitMenu = document.querySelector(".exitMenu");
+    const navBar = document.querySelector("body header ul");
+
+    menuBar.addEventListener("click", () => {
+        exitMenu.style.display = "block";
+        navBar.style.display = "block";
+        menuBar.style.display = "none";
+    });
+
+    exitMenu.addEventListener("click", () => {
+        exitMenu.style.display = "none";
+        navBar.style.display = "none";
+        menuBar.style.display = "block";
+    });
+</script>

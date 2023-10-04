@@ -1,0 +1,44 @@
+---
+interface Props{
+	title?: string;
+}
+
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../css/style.css"
+import iconLogo from "../images/logo.png";
+
+const {title = "Dn Gadgets"} = Astro.props;
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta >
+	<meta name="title" content="DN Gadgets">
+	<meta name="description" content="DN iPhone TechnicianFREE CHECK UPiPhone iOs Android TabletLegit Legit 100%">
+	<meta name="keywords" content="DN iPhone Technician, FREE CHECK UP, iPhone, iOs, Android Tablet, Legit ,DN Gadgets,">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="English">
+	<meta name="generator" content={Astro.generator} />
+	<link rel="icon" type="image/x-icon" href={iconLogo.src}>
+	<title>{title}</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+	
+</head>
+<body>
+	<Header/>
+	<slot />
+	<Footer />
+</body>
+</html>

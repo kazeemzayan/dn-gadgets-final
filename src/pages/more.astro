@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {Image} from "astro:assets"
+const clientImg = await Astro.glob("../images/client/*").then(items => {
+    return items.map(item => item.default);
+});
+---
+
+
+<Layout title="About Dn Gadgets">
+<main>
+    <section class="clients">
+        <h2>Thank you for trusting DN-Gadgets</h2>
+        <ul>
+            {
+                clientImg.map(image => (
+            <li>
+                <Image src={image} loading="lazy" alt="satisfiend client pictue"  />
+            </li>
+            ))
+            }
+        </ul>
+    </section>
+    <a href="https://www.facebook.com/profile.php?id=100068830778943&mibextid=ZbWKwL">for more? - check our fb page</a>
+</main>
+</Layout>

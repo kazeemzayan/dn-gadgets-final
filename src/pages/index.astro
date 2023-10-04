@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {Image} from "astro:assets"
+const clientImg = await Astro.glob("../images/client/*").then(items => {
+    return items.map(item => item.default);
+});
+---
+
+<Layout>
+<main>
+   
+    <section class="banner">
+        
+        <div class=content-banner>
+            <h1>DN iPhone Technician</h1>
+        <p>One of the Best iPhone Repair Shop</p>
+        <p>FREE CHECK-UP, iPhone, iOs, Android Tablet 100% legit</p>
+        <a href="https://www.facebook.com/Eyah.NatangcopDN"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg> Chat Me on Fb</a>
+        </div>
+        <div class="bg"></div>
+
+    </section>
+
+    <section class="clients">
+        <h2>Satisfied Client 100% fix and clean </h2>
+        <ul>
+            {
+                clientImg.map(image => (
+            <li>
+                <Image src={image} loading="lazy" alt="satisfiend client pictue"  />
+            </li>
+            ))
+            }
+        </ul>
+    </section>
+</main>
+
+</Layout>
