@@ -1,10 +1,10 @@
 ---
-interface Props{
+export interface Props{
     name?: string;
     url?: string
 }
 
-const {url = "/", name="home"} = Astro.props;
+const {url = "/", name="home"} = Astro.props as Props;
 ---
 
 <li>
